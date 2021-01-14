@@ -1,6 +1,13 @@
 import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.Test
-import singleton.NetworkDriver
+
+object NetworkDriver {
+    init {
+        println("Initializing: $this")
+    }
+
+    fun log(): NetworkDriver = apply { println("Network driver: $this") }
+}
 
 class SingletonTest {
     @Test
